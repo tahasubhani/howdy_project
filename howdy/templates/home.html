@@ -1,0 +1,372 @@
+{% extends '_layout.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+<!-------------------------------------images-header------------------------------------>
+
+<main >
+    <div class="flip-box ">
+        <div class="flip-box-inner">
+          <div class="flip-box-front">
+            <a href="{% url 'category_items' id=4 %}">
+            <img src="https://static.tossdown.com/images/b675dd3e-895d-4841-8864-707f0e0c6dd9.webp" width="1350px" height="400px">
+        </a>
+          </div>
+          <div class="flip-box-back">
+            <a href="{% url 'category_items' id=2 %}">
+            <img src="https://static.tossdown.com/images/3c689322-eb1f-407d-a39a-a0794a428ba6.webp" alt="" width="1350px" height="400px">
+        </a>
+          </div>
+        </div>
+      </div>
+</main>
+<!------------------------------------grav a bite section--------------------------------->
+
+<section style="background-color: #f9f4ed; padding-top:80px; height: 900px;"> 
+
+    <div class=" mx-3  categories">
+        <!-- cayegories -->
+        <div class="container text-center mx-5">
+            <h3>Grab A Bite Of Flavor</h3>
+                <div class="row col-md-12 mt-5">
+                    <div class="col p-0">
+                    <a href="{% url 'category_items' id=3 %}" class="a_div">
+                        <div class="card  categorie_items" style="width: 14rem;">
+                            <img src="https://static.tossdown.com/images/119f77c2-09d8-405b-a403-b59ed16c7629.webp" class="card-img-top" alt="..." >
+                            <div class="card-body cart_tittle">
+                                <h6 class="card-title">Appetizers</h6>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                    <div class="col p-0">
+                        <a href="{% url 'category_items' id=4 %}" class="a_div">
+                            <div class="card  categorie_items" style="width: 14rem;">
+                                <img src="https://static.tossdown.com/images/32d9f681-1612-4c94-aeb7-a51c76c0203a.webp" class="card-img-top" alt="...">
+                                <div class="card-body cart_tittle">
+                                    <h6 class="card-title">Burgers</h6>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col p-0">
+                        <a href="{% url 'category_items' id='1' %}" class="a_div">
+                            <div class="card  categorie_items" style="width: 14rem;">
+                                <img src="https://static.tossdown.com/images/cf99ce0d-71bf-4e04-b4f0-b80a445c49f3.webp" class="card-img-top" alt="...">
+                                <div class="card-body cart_tittle">
+                                    <h6 class="card-title">Rotisserie Chicken</h6>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col p-0">
+                        <a href="{% url 'category_items' id=5 %}" class="a_div">
+                            <div class="card  categorie_items" style="width: 14rem;">
+                                <img src="https://static.tossdown.com/images/b075f8ff-222e-48cc-9398-5314b9636a06.webp" class="card-img-top" alt="...">
+                                <div class="card-body cart_tittle">
+                                    <h6 class="card-title">Chicken Steaks</h6>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        <!-- cayegories 2nd row-->
+        
+        <div class="container text-center ">
+                <div class="row col-md-12 mt-5">
+                <div class="col p-0">
+                    <a href="{% url 'category_items' id=6 %}"class="a_div">
+                        <div class="card  categorie_items" style="width: 14rem; ">
+                            <img src="https://static.tossdown.com/images/c8f3c5c3-9878-4430-9a63-206568536d3f.webp" class="card-img-top" alt="...">
+                            <div class="card-body cart_tittle">
+                                <h6 class="card-title">Wings</h6>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                    <div class="col p-0">
+                        <a href="{% url 'category_items' id=1 %}"class="a_div">
+                            <div class="card  categorie_items" style="width: 14rem;">
+                                <img src="https://static.tossdown.com/images/c13170a5-b758-40a5-8f20-4405424126f6.webp" class="card-img-top" alt="...">
+                                <div class="card-body cart_tittle">
+                                    <h6 class="card-title">Wraps</h6>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col p-0">
+                        <a href="{% url 'category_items' id=8 %}"class="a_div">
+                            <div class="card  categorie_items" style="width: 14rem;">
+                                <img src="https://static.tossdown.com/images/3a935000-8d43-48ec-81c0-47450b9ee2e0.webp" class="card-img-top" alt="...">
+                                <div class="card-body cart_tittle">
+                                    <h6 class="card-title">Fryz</h6>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col p-0">
+                        <a href="{% url 'category_items' id=9 %}"class="a_div">
+                            <div class="card categorie_items" style="width: 14rem;">
+                                <img src="https://static.tossdown.com/images/a3c3d0ca-ba4f-47e5-a2be-768be3b4f509.webp" class="card-img-top" alt="...">
+                                <div class="card-body cart_tittle">
+                                    <h6 class="card-title">Desserts</h6>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+    </div>   
+
+</section>
+
+<!--------------------------------most popular items in home page------------------------->
+
+<section class="container mt-5">
+    <h3 class="most_popular_h3">MOST POPULAR items</h3>
+    <div class="d-flex mt-5">
+        <div class="card" style="width: 18rem; border: none;">
+            <a href="#" class="image_upper_tag">Hotseller</a>
+            <img src="https://static.tossdown.com/images/600/cadc2a51-d5c9-4f58-8773-4eed11f909c9.webp" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+            <h5 class="card-title">crispy Bae</h5>
+            <p class="card-text">
+                Crispy fried chicken with chipotle sauce.                                .</p>
+            <h5 class="card-title my-3">PKR 799</h5>
+            <a href="#" class="btn  most_add_to_cart">Add to cart</a>
+            </div>
+        </div>
+        <!--  -->
+        <div class="card" style="width: 18rem; border: none">
+            <a href="#" class="image_upper_tag">Hotseller</a>
+            <img src="https://static.tossdown.com/images/3e0fefb4-27ae-46ed-a066-c07279bd2af4.webp" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+            <h5 class="card-title">Rango Tango</h5>
+            <p class="card-text">Jelepeno Grilled  Chicken Filler Burger</p>
+            <h5 class="card-title my-3">PKR 799</h5>
+            <a href="#" class="btn  most_add_to_cart">Add to cart</a>
+            </div>
+        </div>
+        <!--  -->
+        <div class="card" style="width: 18rem; border: none">
+            <a href="#" class="image_upper_tag">Topseller</a>
+            <img src="https://static.tossdown.com/images/600/cadc2a51-d5c9-4f58-8773-4eed11f909c9.webp" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+            <h5 class="card-title">crispy Bae</h5>
+            <p class="card-text">Crispy fried chicken with chipotle sauce.</p>
+            <h5 class="card-title my-3">PKR 799</h5>
+            <a href="#" class="btn  most_add_to_cart">Add to cart</a>
+            </div>
+        </div>
+        <!--  -->
+        <div class="card" style="width: 18rem; border: none">
+            <a href="#" class="image_upper_tag">Hotseller</a>
+            <img src="https://static.tossdown.com/images/600/7a099cb5-c01a-4858-9f2c-e76a9da1d744.webp" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+            <h5 class="card-title">Son of Bun</h5>
+            <p class="card-text">Double steak beef burger Double steak beef burger.</p>
+            <h5 class="card-title my-3">PKR 799</h5>
+            <a href="#" class="btn most_add_to_cart">Add to cart</a>
+            </div>
+        </div>
+    </div>
+
+    
+    <!--2nd row-->
+    <!-- <div class="mt-5"></div>
+    <div class="d-flex mt-5 ">
+        <div class="card" style="width: 18rem; border: none;">
+            <a href="#" class="image_upper_tag">Hotseller</a>
+            <img src="https://static.tossdown.com/images/600/cadc2a51-d5c9-4f58-8773-4eed11f909c9.webp" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+            <h5 class="card-title">crispy Bae</h5>
+            <p class="card-text">
+                Crispy fried chicken with chipotle sauce.                                .</p>
+            <a href="#" class="btn  most_add_to_cart">Add to cart</a>
+            </div>
+        </div>
+        
+        <div class="card" style="width: 18rem; border: none">
+            <a href="#" class="image_upper_tag">Hotseller</a>
+            <img src="https://static.tossdown.com/images/3e0fefb4-27ae-46ed-a066-c07279bd2af4.webp" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+            <h5 class="card-title">Rango Tango</h5>
+            <p class="card-text">Jelepeno Grilled  Chicken Filler Burger</p>
+            <a href="#" class="btn  most_add_to_cart">Add to cart</a>
+            </div>
+        </div>
+        
+        <div class="card" style="width: 18rem; border: none">
+            <a href="#" class="image_upper_tag">Topseller</a>
+            <img src="https://static.tossdown.com/images/600/cadc2a51-d5c9-4f58-8773-4eed11f909c9.webp" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+            <h5 class="card-title">crispy Bae</h5>
+            <p class="card-text">Crispy fried chicken with chipotle sauce.</p>
+            <a href="#" class="btn  most_add_to_cart">Add to cart</a>
+            </div>
+        </div>
+        
+        <div class="card" style="width: 18rem; border: none">
+            <a href="#" class="image_upper_tag">Hotseller</a>
+            <img src="https://static.tossdown.com/images/600/7a099cb5-c01a-4858-9f2c-e76a9da1d744.webp" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+            <h5 class="card-title">Son of Bun</h5>
+            <p class="card-text">Double steak beef burger Double steak beef burger.</p>
+            <a href="#" class="btn most_add_to_cart">Add to cart</a>
+            </div>
+        </div>
+    </div> -->
+</section>
+
+<!--------------------------------- next-categories--------------------------------------->
+
+<section class="container mt-5">
+    <h3 class="most_popular_h3">Cluckin Favourites</h3>
+    <div class="d-flex mt-5">
+        <div class="card" style="width: 18rem; border: none;">
+            <img src="https://static.tossdown.com/images/600/cadc2a51-d5c9-4f58-8773-4eed11f909c9.webp" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+                <h5 class="card-title">crispy Bae</h5>
+                    <p class="card-text">
+                        Crispy fried chicken with chipotle sauce.</p>
+                <h5 class="card-title my-3">PKR 799</h5>
+                <a href="#" class="btn  most_add_to_cart">Add to cart</a>
+            </div>
+        </div>
+    <!--  -->
+        <div class="card" style="width: 18rem; border: none">
+            <img src="https://static.tossdown.com/images/3e0fefb4-27ae-46ed-a066-c07279bd2af4.webp" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+            <h5 class="card-title">Rango Tango</h5>
+            <p class="card-text">Jelepeno Grilled  Chicken Filler Burger</p>
+            <h5 class="card-title my-3">PKR 799</h5>
+            <a href="#" class="btn  most_add_to_cart">Add to cart</a>
+            </div>
+        </div>
+    <!--  -->
+        <div class="card" style="width: 18rem; border: none">
+            <img src="https://static.tossdown.com/images/600/cadc2a51-d5c9-4f58-8773-4eed11f909c9.webp" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+            <h5 class="card-title">crispy Bae</h5>
+            <p class="card-text">Crispy fried chicken with chipotle sauce.</p>
+            <h5 class="card-title my-3">PKR 799</h5>
+            <a href="#" class="btn  most_add_to_cart">Add to cart</a>
+            </div>
+        </div>
+    <!--  -->
+        <div class="card" style="width: 18rem; border: none">
+            <img src="https://static.tossdown.com/images/600/7a099cb5-c01a-4858-9f2c-e76a9da1d744.webp" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+            <h5 class="card-title">Son of Bun</h5>
+            <p class="card-text">Double steak beef burger Double steak beef burger.</p>
+            <h5 class="card-title my-3">PKR 799</h5>
+            <a href="#" class="btn most_add_to_cart">Add to cart</a>
+            </div>
+        </div>
+    </div>
+<!----------------------------------------2nd row----------------------------------------->
+    <div class="mt-5"></div>
+
+    <div class="d-flex mt-5 ">
+        <div class="card" style="width: 18rem; border: none;">
+            <img src="https://static.tossdown.com/images/600/cadc2a51-d5c9-4f58-8773-4eed11f909c9.webp" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+            <h5 class="card-title">crispy Bae</h5>
+            <p class="card-text">
+                Crispy fried chicken with chipotle sauce.</p>
+            <h5 class="card-title my-3">PKR 799</h5>
+            <a href="#" class="btn  most_add_to_cart">Add to cart</a>
+            </div>
+        </div>
+        <!--  -->
+        <div class="card" style="width: 18rem; border: none">
+            <img src="https://static.tossdown.com/images/3e0fefb4-27ae-46ed-a066-c07279bd2af4.webp" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+            <h5 class="card-title">Rango Tango</h5>
+            <p class="card-text">Jelepeno Grilled  Chicken Filler Burger</p>
+            <h5 class="card-title my-3">PKR 799</h5>
+            <a href="#" class="btn  most_add_to_cart">Add to cart</a>
+            </div>
+        </div>
+        <!--  -->
+        <div class="card" style="width: 18rem; border: none">
+            <img src="https://static.tossdown.com/images/600/cadc2a51-d5c9-4f58-8773-4eed11f909c9.webp" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+            <h5 class="card-title">crispy Bae</h5>
+            <p class="card-text">Crispy fried chicken with chipotle sauce.</p>
+            <h5 class="card-title my-3">PKR 799</h5>
+            <a href="#" class="btn  most_add_to_cart">Add to cart</a>
+            </div>
+        </div>
+        <!--  -->
+        <div class="card" style="width: 18rem; border: none">
+            <img src="https://static.tossdown.com/images/600/7a099cb5-c01a-4858-9f2c-e76a9da1d744.webp" class="card-img-top" alt="...">
+            <div class="card-body text-center">
+            <h5 class="card-title">Son of Bun</h5>
+            <p class="card-text">Double steak beef burger Double steak beef burger.</p>
+            <h5 class="card-title my-3">PKR 799</h5>
+
+            <button type="button" class="btn most_add_to_cart" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                Add to cart
+                </button>
+                <!-- models -->
+                <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-xl">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn-close"data-bs-dismiss="modal"aria-label="Close">
+                        </button>
+                    </div>
+                    <div class="modal-body d-flex">
+                        <div>
+                        <img src="https://static.tossdown.com/images/600/7a099cb5-c01a-4858-9f2c-e76a9da1d744.webp" alt="" srcset="">
+                        </div>
+                        <div class="mx-5 px-5 add_to-cart-div">
+                        <form action="#">
+                            <h3 class="cart-in">Son of Bun</h3>
+                            <h6 >Double steak beef burger Double steak beef burger</h6>
+                            <h4 class="cart-in">Category</h4>
+                            <h6>burgers</h6>
+                            <h2>PKR 799</h2>
+                            <p>Make It A Meal</p>
+                            <p>Choose upto 1 (Optional)</p>
+
+                            <input type="checkbox" name=""><span class="mx-2
+                            ">Meal PKR 249</span>
+                            <br>
+                            <div class="mt-3">
+                                <div>
+                                    <button class="modelsbtnleft" id="btn_minus">
+                                        <span style="color:black;">-</span>
+                                    </button>
+        
+                                    <input type="number" class="modelsinput" id="qlt">
+        
+                                    <button class="modelsbtnright" id="btn_plus">
+                                        <span style="color:black;">+</span>
+                                    </button>
+                                </div>
+                                <div class="mt-3">
+                                    <a href="{% url 'show_cart' %}"><button type="button" class="btn most_add_to_cart" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                                        Add to cart
+                                    </button></a>
+                                </div>
+                            </div>
+                        </form>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% endblock %}
+

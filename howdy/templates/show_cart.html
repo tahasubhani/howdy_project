@@ -1,0 +1,76 @@
+{% extends '_layout.html' %}
+
+{% load static %}
+
+
+{% block content %}
+<!---------------------------------heading--------------------------------------->
+
+  <div>
+    <h1 class="container">Shooping Cart</h1>
+  </div>
+<!--------------------------------- show-cart--------------------------------------->
+
+  <section class="d-flex section">
+    <div class="mx-5 add_cart_first_section container-fluid">
+      <div class="container-fluid  mt-5 table">
+        <div class="d-flex table-div table-first  table">
+            <h6 class="mx-4">Product</h6>
+            <h6 class="mx-5">Price</h6>
+            <h6  class="mx-5">Quality</h6>
+            <h6  class="mx-5">Subtotal</h6>
+            <h6  class="mx-3">delete</h6>
+        </div>
+          {%if cart_items %}
+            {% for cart in cart_items %}
+              <div class="d-flex table-div table-first">
+                <img src="{{ cart.product.Image.url }}" class="card-img-top mx-4" alt="...">
+                <h6 class="mx-5">{{cart.product.price}}</h6>
+                <h6  class="mx-5">{{cart.qty}}</h6>
+                <h6  class="mx-5">{{cart.sub_total}}</h6>
+                  <button class="btn_cart mx-5 ">
+                    <a href="{% url 'delete_user' cart.id %}" class="text-decoration-none">
+                      <i class="fa-solid fa-trash-can" style="color: #ec0914; padding-bottom: 70px;">
+                      </i>
+                    </a>
+                  </button>
+              </div>
+            {% endfor %}
+          {% endif %}
+            <div class="mt-3">
+              <a href="{% url 'menu' %}"><button class=" mt-3 mb-4 btn-addd">Continue Shopping</button></a>
+          </div>
+      </div>
+    </div>
+
+    <div class="container ">
+      <div class=" last-coupen">
+        <div class="div-v">
+            <h4 class="py-3">Cart Summary</h4>
+            <div class=" d-flex d-h">
+                <p class="bold">Subtotal:</p>
+                <p class="bold">{{sub_total}}</p>
+            </div>
+            <div class=" d-flex d-h">
+              <p class="bold">GSt:</p>
+              <p class="bold">13%</p>
+          </div>
+            <hr class="p-0 m-0">
+            <div class=" d-flex d-h  mt-3">
+                <p class="bold" style="color: gray;">Applicable taxes and fee will be calculated before finalizing checkout</p>
+            </div>
+            <hr class="p-0 m-0 mt-3">
+            <div class=" d-flex  d-h mt-3">
+              <p class="bold">Grand Total</p>
+              <p class="bold">PKR <strong>{{grand_total}}</strong></p>
+          </div>
+            <div class="mt-3">
+                <a href="{% url 'check_to_proceed' %}"><button class="mx-5  mb-4 btn-add">Proceeds to Checkout</button></a>
+            </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+{% endblock %}

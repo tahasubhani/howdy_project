@@ -1,0 +1,72 @@
+{% load static %}
+
+<!-------------------------------------navbar--------------------------------------------->
+
+<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom height100px">  
+  <a href="#" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none mx-5">
+      <svg class="bi me-2" width="40" height="32">
+        <use xlink:href="#bootstrap">
+        </use>
+      </svg>
+        <span class="fs-4 col-xs-3">
+          <img src="https://images-beta.tossdown.com/site/752a88d2-c134-4ba5-ba7b-e62e66498d5c.webp" height="60px" width="150px">
+
+    <!-----------------------------Button trigger modal----------------------------------->
+
+      <button type="button" class="btn " data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Current Location <i class="fa-solid fa-caret-down"></i> 
+      </button>
+    
+    <!-----------------------------------Modal-------------------------------------------->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="mx-5"></div>
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                  <img src="https://images-beta.tossdown.com/site/752a88d2-c134-4ba5-ba7b-e62e66498d5c.webp" height="80px" width="300px" class="mx-5 col-md-6">
+                </h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                  </button>
+          </div>
+          <h6 class="mx-3 mt-3">choose your nearest Branch</h6>
+            <div class="modal-body">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Select your Location</option>
+                  <option value="1">Johar Town , Lahore </option>
+                  <option value="2">M.Malum Road</option>
+                  <option value="3">Mdela Town, Link Road,Lahore </option>
+                </select>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger">Save changes</button>
+            </div>
+        </div>
+      </div>
+    </div>
+<!---------------------------------------ul list------------------------------------------>
+    <ul class="nav nav-pills mx-5">
+      <li class="nav-item"><a href="{% url 'home'%}" class="nav-link text-dark">Home</a></li>
+      <li class="nav-item"><a href="{% url 'menu'%}" class="nav-link text-dark">Menu</a></li>
+      {% if user.is_authenticated or signup %}         
+        <li class="nav-item">
+          <a href="{% url 'logout_user' %}" class="nav-link text-dark">LOGOUT</a>
+        </li>
+        {%else%}
+          <li class="nav-item">
+            <a href="{% url 'check_to_proceed'%}" class="nav-link text-dark">
+            Login
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{% url 'create_account' %}" class="nav-link text-dark">
+            Signup
+            </a>
+          </li>
+      {% endif %}
+          <a href="{% url  'show_cart'  %}" class="nav-link text-dark">
+              <i class="fa-solid fa-bag-shopping"></i>
+          </a>
+    </ul>
+</header>
+

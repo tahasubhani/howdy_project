@@ -1,0 +1,103 @@
+{% extends '_layout.html' %}
+
+{% load static %}
+
+
+{% block content %}
+<!------------------------------------main-section---------------------------------------->
+
+<section class="d-flex mx-5">
+<!-----------------------------------------FORM------------------------------------------->
+
+    <div class="form-section   pt-5 order_form">
+        <form action="{% url 'checkout' %}" class="row g-3 " method="POST" >
+            {% csrf_token %}
+            <h3 class=" h3">chosing shiping method </h3>
+            <div class="d-flex radio ">
+                <input type="hidden" name="order_amount" value="{{ grand_total }}">
+                <input id="credit" name="paymentMethod" type="radio"class="form-check-input mb-4" value="bank" checked>
+                <span class="mx-3 bold">Bank</span>
+                <br>
+                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" value="cash_on_delivery">
+                <span class="mx-3 bold">Cash Delivery</span>
+            </div>
+            <hr>
+            <h3 class=" h3">Delivery Details</h3>
+            <div class="row">
+                {{form.email}}
+            </div>
+
+            <div class="col-md-6 inputs py-3">
+                {{ form.first_name }}
+                <!-- <input type="text" class="form-control  py-3 bg-body-tertiary  input-border " id="input01" placeholder="First Name"> -->
+            </div>
+
+            <div class="col-md-6 inputs py-3">
+                {{ form.phone }}
+
+                <!-- <input type="email" class="c" id="input01" name="email"  placeholder="Contact No*"> -->
+            </div>
+
+            <div class="row  py-3 ">
+                {{ form.address }}
+                <!-- <input type="text" class="form-control  py-5 bg-body-tertiary  input-border"placeholder="Full Adresses*" name="Adresses"> -->
+            </div>
+
+            <div class="d-flex ">
+                <div class="col-md-12 inputs  mx-1 ">
+                    {{ form.city }}
+                        <!-- <select class="form-select form-control  px-5 py-3  bg-body-tertiary  select_oder" aria-label="Default select example">
+                            <option selected>Select your city</option>
+                            <option value="1"></option>
+                        </select>  -->
+                        <!-- <span class="mx-5"></span> -->
+
+                        <!-- <select class="form-select   bg-body-tertiary  " aria-label="Default select example">
+                            <option selected>Select your area</option>
+                            <option value="1">t-f 17 </option>
+                        </select> -->
+                </div>
+            </div>
+
+            <div class="row py-4">
+                {{form.Special_Instructions}}
+                <!-- <input type="text" class="form-control  py-4 bg-body-tertiary "  placeholder="Special Instructions(Optional)" name="email"> -->
+            </div>
+
+            <div class="d-flex justify-content: space-between;">
+                <div class=" return1 ">
+                    <a href="{% url 'show_cart' %}" class="return"><i class="fa-solid fa-backward-step mx-3"></i>RETURN</a>
+                </div>
+            
+                <button class="mx-5  mb-4  btn-add_in">Proceeds to Checkout</button>
+            </div>
+        </form> 
+    </div>
+<!-----------------------------------------cart------------------------------------------->
+
+    <div class=" last-coupe mt-3">
+    <div class="div-v">
+        <h4 class="py-3">Cart Summary</h4>
+        <div class=" d-flex d-h">
+            <p class="bold">Subtotal:</p>
+            <p class="bold">{{sub_total}}</p>
+        </div>
+        <div class=" d-flex d-h">
+            <p class="bold">GSt:</p>
+            <p class="bold">13%</p>
+        </div>
+        <hr class="p-0 m-0">
+        <div class=" d-flex d-h  mt-3">
+            <p class="bold">Applicable taxes and fee will be calculated before finalizing checkout</p>
+        </div>
+        <hr class="p-0 m-0 mt-3">
+        <div class=" d-flex  d-h mt-3">
+            <p class="bold">Grand Total</p>
+            <p class="bold">PKR <strong>{{grand_total}}</strong></p>
+        </div>
+    </div>
+    </div>
+
+</section>
+
+{% endblock %}

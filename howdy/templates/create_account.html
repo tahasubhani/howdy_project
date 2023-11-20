@@ -1,0 +1,43 @@
+{% extends '_layout.html' %}
+
+{% load static %}
+
+
+{% block content %}
+<!-------------------------------------main-section--------------------------------------->
+
+  <section class=" signup">
+      <h1>Create an account</h1>
+<!-----------------------------------------FORM------------------------------------------->
+
+      <form action="{% url 'create_account' %}" method="POST">
+          {% csrf_token %}
+          <div class="col-md-6 inputs mt-4">
+            {{ form.username }}
+              <!-- <input type="email" class="form-control  in py-3 bg-body-tertiary " placeholder="Full name"> -->
+          </div>
+          <div class="col-md-6 inputs mt-4">
+            {{ form.email }}
+            <!--<input type="email" class="form-control  in py-3 bg-body-tertiary " placeholder="Enter your Email"> -->
+          </div>
+          <div class="col-md-6 inputs mt-4">
+            {{ form.password1 }}
+              <!-- <input type="email" class="form-control  in py-3 bg-body-tertiary " placeholder="Enter your Password"> -->
+          </div>
+          <div class="col-md-6 inputs mt-4">
+            {{ form.password2 }}
+              <!-- <input type="email" class="form-control  in py-3 bg-body-tertiary " placeholder="Enter your Password"> -->
+          </div>
+          <div class="col-md-6 inputs mt-4">
+            {{form.phone}}
+                <!-- <input type="email" class="form-control  in py-3 bg-body-tertiary " placeholder="Enter your Phone NO">  -->
+          </div>
+          <div class="col-md-6 inputs mt-4 mx-5">
+            {{form.city}}
+          </div>
+          <button>SIGNUP</button>
+      </form>
+  </section>
+
+{% endblock %}
+
