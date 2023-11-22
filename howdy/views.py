@@ -105,7 +105,7 @@ def checkout(request):
                 recipient_list = [request.POST['email']]
                 send_mail(subject,msg_plain,form_email,recipient_list, html_message=msg_html)
             else:
-                return redirect('home')
+                return redirect('order')
     else:
         form =Orderform()
         return render(request,'checkout.html',{'form':form,'cart_items':cart_items, 'sub_total':sub_total,'grand_total':grand_total})  
@@ -198,15 +198,12 @@ def email(request):
 #___________________________________Email_______________________________________________#
 
 def order_confirm(request):
-    cart_items = Cart.objects.filter(user=request.user,order_id=0)
+    cart_items = Cart.objects.all()
+    order = Order.objects.all()
+    # return HttpResponse(cat)
     sub_total = 0
-
     for cart in cart_items:
         sub_total += cart.sub_total
-
     grand_total = float(sub_total)*0.13
     grand_total+= float(sub_total)
-
-    return render(request,'confirm_oder.html',{'cart_items':cart_items,'grand_total':grand_total })
-
-   
+    return render(request,'confirm_oder.html',{'cart_items':cart_items,'grand_total':grand_total,'order':order  })

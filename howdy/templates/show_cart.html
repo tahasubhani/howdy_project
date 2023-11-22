@@ -12,14 +12,14 @@
 <!--------------------------------- show-cart--------------------------------------->
 
   <section class="d-flex section">
-    <div class="mx-5 px-4 add_cart_first_section container-fluid">
+   <div class="mx-5 px-4 add_cart_first_section container-fluid ">
       <div class="container-fluid  mt-5 table">
-        <div class="d-flex table-div table-first  table">
+        <div class="d-flex table-div table-first  table ">
             <h6 class="mx-4">Product</h6>
             <h6 class="mx-5">Price</h6>
             <h6  class="mx-5">Quality</h6>
             <h6  class="mx-5">Subtotal</h6>
-            <h6  class="mx-5 px-2">delete</h6>
+            <h6  class="mx-5">delete</h6>
         </div>
           {%if cart_items %}
             {% for cart in cart_items %}
@@ -40,7 +40,7 @@
               <a href="{% url 'menu' %}"><button class=" mt-3 mb-4 btn-addd">Continue Shopping</button></a>
           </div>
       </div>
-    </div>
+    </div> 
 
 
 
