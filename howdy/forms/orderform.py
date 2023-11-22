@@ -14,7 +14,7 @@ class Orderform(forms.ModelForm):
     class Meta:
         model= Order
         fields =('__all__')
-        exclude = ('user','oders_amount','payment_mode','city')
+        exclude = ('user','oders_amount','payment_mode')
 
     def __init__(self, *args, **kwargs):
         super(Orderform,self).__init__(*args, **kwargs)

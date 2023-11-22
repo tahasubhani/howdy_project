@@ -2,7 +2,8 @@ from django.shortcuts import render,redirect
 from django.contrib.auth import authenticate,login,logout
 from django.http import HttpResponse
 from django.contrib import messages
-from .models import Product,Category,Cart
+from .models import Product,Category,Cart,Order
+from django.contrib.auth.decorators import login_required
 from .forms.userform import createform
 from .forms.orderform import Orderform
 from django.conf import settings
@@ -23,7 +24,7 @@ def menu(request):
     Categorys_name = ''
     return render(request,'menu.html',{'category_products': category_products,'categories':category,'Categorys_name':Categorys_name})
 #______________________________SHOW_CART________________________________________________#
-
+@login_required(login_url='create_account')
 def show_cart(request):
     if request.method == "POST":
         id = request.POST.get('product_id')
@@ -103,12 +104,6 @@ def checkout(request):
                 form_email = settings.EMAIL_HOST_USER
                 recipient_list = [request.POST['email']]
                 send_mail(subject,msg_plain,form_email,recipient_list, html_message=msg_html)
-                send_sms(
-                    'Here is the message',
-                    '+923234545880',
-                    [request.POST],
-                    fail_silently=False
-                )
             else:
                 return redirect('home')
     else:
@@ -177,7 +172,7 @@ def delete_user(request,id):
         return redirect('menu')
 #________________________________category_items_________________________________________#
 
-def  category_items(request,id):
+def category_items(request,id):
     category_object = Category.objects.get(id=id)
     Categorys_name = category_object.name  
     # products =Product.objects.filter(category = category_object)
@@ -189,12 +184,29 @@ def  category_items(request,id):
    
 def email(request):
     cart_items = Cart.objects.filter(user=request.user,order_id=0)
-    grand_total = 0
+    sub_total = 0
+
 
     for cart in cart_items:
-        grand_total += cart.sub_total
+        sub_total += cart.sub_total
+
+    grand_total = float(sub_total)*0.13
+    grand_total+= float(sub_total)
 
     message_body = loader.get_template('order_email.html')
-    return HttpResponse(message_body.render({'cart_items': cart_items, 'grand_total':grand_total}))
+    return HttpResponse(message_body.render({'cart_items': cart_items, 'grand_total':grand_total }))
+#___________________________________Email_______________________________________________#
+
+def order_confirm(request):
+    cart_items = Cart.objects.filter(user=request.user,order_id=0)
+    sub_total = 0
+
+    for cart in cart_items:
+        sub_total += cart.sub_total
+
+    grand_total = float(sub_total)*0.13
+    grand_total+= float(sub_total)
+
+    return render(request,'confirm_oder.html',{'cart_items':cart_items,'grand_total':grand_total })
 
    

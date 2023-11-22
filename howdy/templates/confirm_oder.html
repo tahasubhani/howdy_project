@@ -1,0 +1,70 @@
+{% extends '_layout.html' %}
+
+{% load static %}
+
+
+{% block content %}
+<section class=" container confirm_page">
+    <div>
+        <h2 style="color: red; text-align: center;">ODERR DETAILS</h2>
+        <table class=" mt-5">
+            <thead>
+              <tr>
+                <!-- <th scope="col">Contact information</th>-->
+                <!-- <th scope="col">Last</th>
+                <th scope="col">Handle</th> -->
+              </tr>
+            </thead>
+            <tbody>
+            {% if cart_items %}
+                {% for cart in cart_items %}
+                    <tr>
+                        <!-- <th>Thanks your odering</th> -->
+                    </tr>
+                    <tr>
+                        <td> {{cart.user}}</td>
+                    </tr>
+                    <tr>
+                        <!-- <th> your oder name </th> -->
+                    </tr>
+                    <tr>
+                        <td> {{cart.product}}</td>
+                    </tr>
+                    <tr>
+                        <!-- <th>YOUR ODER QUANTITY</th> -->
+                    </tr>
+                    <tr>
+                        <td>{{ cart.qty}}</td>
+                    </tr>
+                    <tr>
+                        <!-- <th>YOUR ODER PRICE</th> -->
+                    </tr>
+                    <tr>
+                        <td>{{ cart.sub_total }}</td>
+                    </tr>
+                    <tr>
+                        <!-- <th>GST</th> -->
+                    </tr>
+                    <tr>
+                        <td>13%</td>
+                    </tr>
+                    <tr>
+                        <!-- <th>TOTAL</th> -->
+                    </tr>
+                    <tr>
+                        <td>{{ grand_total }}</td>
+                    </tr>
+                    <tr>
+                        <!-- <th>YOUR ODER PRICE</th> -->
+                    </tr>
+                    <tr>
+                        <td>{{cart.product.category}}</td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+            </tbody>
+          </table>
+    </div>
+</section>
+
+{% endblock %}

@@ -68,11 +68,11 @@
     <header class="py-5 shop-header">
         <div class="container px-4 px-lg-5 my-5">
             <div class="text-center text-white">
-                <h1 class="display-4 fw-bolder">Order Confirmation</h1>
+                <h1 class="display-4 fw-bolder">Thanks your Odering </h1>
             </div>
         </div>
     </header>
-    <h3 class="text-center cart-totall my-5"> Product Details</h3>
+    <h3 class="text-center cart-totall my-5">Product Details</h3>
     <div class="container">
         <table class="table table-striped-rows">
             <thead>
@@ -89,10 +89,10 @@
               {% if cart_items %}
                 {% for cart in cart_items %}
                   <tr>
-                    <td class="mx-5">{{ cart.product.name }}</th>
-                    <td class="mx-5"> ${{ cart.product.price }} </td>
-                    <td class="mx-5 text-center">{{ cart.qty }} </td>
-                    <td class="mx-5"> ${{ cart.sub_total }}</td>
+                    <td class="mx-5"> <strong>{{ cart.product.name }}</strong> </th>
+                    <td class="mx-5"><strong>{{ cart.product.price }}</strong>  </td>
+                    <td class="mx-5 text-center"><strong>{{ cart.qty }}</strong> </td>
+                    <td class="mx-5"><strong>{{ cart.sub_total }}</strong></td>
                   </tr>
                 {% endfor %}
               {% endif %}
@@ -100,36 +100,25 @@
           </table>
           <div class="cart-total">
             <h5 class="cart-totall"><strong>Cart Total</strong></h5>
-          <br>
               <div class="d-flex justify-content-between ps-1">
                   <input type="hidden">
-                  <p class="cart-totall">Subtotal:</p>
+                  <p class="cart-totall">instruction</p>
                   <span>
-                    <strong>${{ grand_total }}</strong>
+                    <strong>Applicable taxes and fee will be calculated before finalizing checkout</strong>
                   </span>
               </div>
           <hr>
               <div class="d-flex justify-content-between ps-1">
                   <input type="hidden">
-                  <p class="cart-totall">Gst:</p>
-                  <span>
-                    <strong>13%</strong>
-                  </span>
-              </div>
-          <hr>
-              <div class="d-flex justify-content-between ps-1">
-                  <input type="hidden">
-                  <p class="cart-totall">Total:</p>
+                  <p class="cart-totall">YOUR TOTAL:</p>
                   <span >
-                    <strong>${{ grand_total }}</strong>
+                    <strong style="font-size: 20px;">PKR {{ grand_total }}</strong>
                   </span>
               </div>
           </div>  
     </div>
-   
     <div class="footer">
-        <p class="text-white text-center   text-align-center  pt-3"> © TSD.coders</p>
+        <p class="text-white text-center  mt-5 "> © TSD.coders</p>
     </div>
-
 </body>
 </html>

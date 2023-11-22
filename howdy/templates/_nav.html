@@ -1,5 +1,4 @@
 {% load static %}
-
 <!-------------------------------------navbar--------------------------------------------->
 
 <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom height100px">  
@@ -9,7 +8,7 @@
         </use>
       </svg>
         <span class="fs-4 col-xs-3">
-          <img src="https://images-beta.tossdown.com/site/752a88d2-c134-4ba5-ba7b-e62e66498d5c.webp" height="60px" width="150px">
+        <img src="https://images-beta.tossdown.com/site/752a88d2-c134-4ba5-ba7b-e62e66498d5c.webp" height="60px" width="150px">
 
     <!-----------------------------Button trigger modal----------------------------------->
 
@@ -64,9 +63,13 @@
             </a>
           </li>
       {% endif %}
-          <a href="{% url  'show_cart'  %}" class="nav-link text-dark">
-              <i class="fa-solid fa-bag-shopping"></i>
+          <a href="{% url  'show_cart'  %}"class="nav-link text-dark px-0">
+              <i class="fa-solid fa-bag-shopping" style="font-size: 20px; padding: 0px 0px;"></i>
           </a>
+          
+            <p class="add_0" id="cart" >
+              0
+            </p>
     </ul>
 </header>
 

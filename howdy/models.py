@@ -31,8 +31,6 @@ class Cart(models.Model):
     sub_total =models.DecimalField( default=0,decimal_places=2, max_digits=8)
     order_id =models.CharField(default=0, max_length=15)
 
-
-
     def __str__(self):
         # return f'Name: {self.product.name}'
         return f" {self.user.username} - {self.sub_total}"

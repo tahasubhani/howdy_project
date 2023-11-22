@@ -14,12 +14,12 @@
                   <a href="{% url 'menu' %}">
                   All Categories</a>
                   </li>
-                {% for category in categories %}
-                  <li class="li-filter ">
-                    <a href="{% url 'category_items' category.id %}">
-                      {{ category.name }}</a>
-                  </li>
-                {% endfor %}
+                    {% for category in categories %}
+                      <li class="li-filter ">
+                        <a href="{% url 'category_items' category.id %}">
+                          {{ category.name }}</a>
+                      </li>
+                    {% endfor %}
               {% endif %}
             </ul>
         </div>        
@@ -32,9 +32,9 @@
           <div class="row mt-5">
               {% for product in category.product_set.all %}
                 <div class="card" style="width: 18rem; border: none;">
-                    <img src="{{ product.Image.url }}" class="card-img-top" alt="...">
+                    <img src="{{ product.Image.url }}" class="card-img-top" alt="https://images-beta.tossdown.com/site/752a88d2-c134-4ba5-ba7b-e62e66498d5c.webp">
                     <div class="card-body text-center">
-                        <h5 class="card-title">{{product.name}}</h5>
+                        <h5 class="card-title name_p">{{product.name}}</h5>
                         <p class="card-text">
                             {{product.Description}}</p>
                             <h5 class="card-title my-3"><span style="color: gray; margin-right: 5px; font-family: monospace;">PKR</span>{{product.price}}</h5>
@@ -58,10 +58,10 @@
                                 </div>
                                 <div class="modal-body d-flex">
                                   <div>
-                                    <img src="{{ product.Image.url }}" class="card-img-top" alt="" srcset="">
+                                    <img src="{{ product.Image.url }}" class="card-img-top" alt="https://images-beta.tossdown.com/site/752a88d2-c134-4ba5-ba7b-e62e66498d5c.webp" srcset="">
                                   </div>
                                   <div class="mx-5 px-5 add_to-cart-div">
-      <!----------------------------------- FORM------------------------------------------->
+<!------------------------------------- FORM------------------------------------------->
 
                                     <form action="{% url 'show_cart' %}" method="POST">
                                         {% csrf_token %}
@@ -90,13 +90,13 @@
                                                 </button>
                                             </div>
                                             <div class="mt-3">
-                                                <button type="submit" class="btn most_add_to_cart" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                                                <button type="submit" class="btn most_add_to_cart" data-bs-toggle="modal" data-bs-target="#exampleModal1"id="btn-car">
                                                     Add to cart
                                                 </button>
                                             </div>
                                         </div>
                                     </form>
-      <!----------------------------------- END-FORM------------------------------------------->
+<!----------------------------------- END-FORM------------------------------------------->
                               
                                   </div>
                                 </div>

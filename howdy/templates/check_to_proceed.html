@@ -5,17 +5,17 @@
 {% block content %}
 <!--------------------------------------main-section-------------------------------------->
 
-<section class="d-flex proceed_section ">
+<section class="d-flex proceed_section col-md-12">
 <!--------------------------------------first-div----------------------------------------->
     
-    <div class="guest">
+    <div class="guest mx-3 col-md-4">
         <h2>NO Account? no problem</h2>
         <p>Checkout as a guest to avoid any inconvenience</p>
         <button>Checkout as a guest</button>
     </div>
 <!--------------------------------------secound-div--------------------------------------->
 
-    <div class="proceed_login ">
+    <div class="proceed_login col-md-4">
         <h1>Login to your Account</h1>
         <form action="{% url 'check_to_proceed' %}" method="POST">
             {% csrf_token  %}
@@ -31,7 +31,7 @@
     </div>
 <!--------------------------------------third-div----------------------------------------->
 
-    <div class="guest2">
+    <div class="guest2 col-md-4">
         <h4 class="mt-2">Cart Summary</h4>
         <div class=" d-flex d-h">
             <p class="bold">Subtotal:</p>

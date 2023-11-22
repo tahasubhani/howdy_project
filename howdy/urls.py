@@ -11,5 +11,6 @@ urlpatterns = [
     path("category/<int:id>",views.category_items , name ='category_items'),
     path("logout_user/",views.logout_user ,name='logout_user'),
     path("delete_user/<int:id>",views.delete_user ,name='delete_user'),
-    path('email/',views.email)
+    path('email/',views.email),
+    path('order_confirm/',views.order_confirm ,name='order')
 ]
