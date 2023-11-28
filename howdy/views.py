@@ -17,7 +17,7 @@ def home(request):
     # category = Category.objects.all()
     # return HttpResponse(product)
     return render(request,'home.html')
-#_-_____________________________MENU____________________________________________________#
+#______________________________MENU____________________________________________________#
 
 def menu(request):
     category_products =  category = Category.objects.all()
@@ -125,11 +125,10 @@ def check_to_proceed(request):
         if user is not None:
             login(request, user)
             messages.success(request, ("You Have Been Logged In!"))
-
             print('logged in')
             return render(request,'home.html')
         else:
-            messages.error(request, ("You Have Been Logged In!"))
+            messages.error(request, ("plz enter the correct value!"))
             print('error')
             return redirect('check_to_proceed')  
     else:
@@ -195,7 +194,7 @@ def email(request):
 
     message_body = loader.get_template('order_email.html')
     return HttpResponse(message_body.render({'cart_items': cart_items, 'grand_total':grand_total }))
-#___________________________________Email_______________________________________________#
+#_________________________________last_page_______________________________________________#
 
 def order_confirm(request):
     cart_items = Cart.objects.all()
